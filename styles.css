@@ -1,0 +1,251 @@
+/* GERAL E RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Fonte simples, use 'Poppins' ou similar para um toque moderno */
+}
+
+body {
+    background-color: #f5f5f5; /* Fundo cinza claro, típico de e-commerce */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- CABEÇALHO - ESTILO SHOPEE --- */
+.header-shopee {
+    background-color: #ee4d2d; /* Cor principal da Shopee: Laranja */
+    color: white;
+    padding: 0 5%;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: flex-end; /* Links para a direita */
+    font-size: 0.8em;
+    padding: 5px 0;
+}
+
+.top-bar a {
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 15px;
+    transition: color 0.2s;
+}
+
+.top-bar a:hover {
+    color: white;
+}
+
+.main-bar {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-right: 40px;
+    flex-shrink: 0; /* Impede que o logo diminua */
+}
+
+/* Barra de Busca */
+.search-container {
+    display: flex;
+    flex-grow: 1; /* Ocupa o máximo de espaço possível */
+    max-width: 600px;
+    background-color: white;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+}
+
+.search-button {
+    background-color: #f7704f; /* Laranja mais suave para o botão */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.search-button:hover {
+    background-color: #ff5c3b;
+}
+
+/* Ícones e Login */
+.icons {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Empurra para a direita */
+}
+
+.icons a {
+    font-size: 1.2em;
+    margin-left: 25px;
+    color: white;
+}
+
+.user-link {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+/* --- NAVEGAÇÃO DE CATEGORIAS --- */
+.categories-nav {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.categories-nav a {
+    color: #333;
+    padding: 0 15px;
+    font-size: 0.9em;
+    transition: color 0.2s;
+}
+
+.categories-nav a:hover {
+    color: #ee4d2d;
+}
+
+/* --- GRID DE PRODUTOS --- */
+.product-grid-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.product-grid {
+    display: grid;
+    /* Layout responsivo com CSS Grid: 5 colunas no desktop, ajusta para telas menores */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.product-info {
+    padding: 10px;
+}
+
+.product-title {
+    font-size: 0.9em;
+    color: #333;
+    min-height: 36px; /* Ajuda a manter o card uniforme */
+    margin-bottom: 5px;
+}
+
+.product-price {
+    margin: 5px 0;
+}
+
+.price-discount {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+.price-main {
+    color: #ee4d2d; /* Cor de destaque da Shopee */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.product-meta {
+    font-size: 0.75em;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.rating {
+    color: gold; /* Estrelas em dourado */
+}
+
+/* --- RODAPÉ --- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.8em;
+}
+
+/* Responsividade Básica - para telas menores */
+@media (max-width: 768px) {
+    .main-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .search-container {
+        max-width: 100%;
+        order: 3; /* Move a busca para baixo */
+        margin-top: 10px;
+    }
+
+    .icons {
+        margin-left: 20px;
+    }
+
+    .user-link {
+        display: none; /* Esconde o link de login/cadastro para ganhar espaço */
+    }
+
+    .categories-nav {
+        overflow-x: scroll; /* Permite rolar categorias */
+        justify-content: flex-start;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
